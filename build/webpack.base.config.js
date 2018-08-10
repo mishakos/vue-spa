@@ -37,14 +37,38 @@ const config = {
   output: {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/',
-    filename: 'assets/js/[name].js'
+    filename: 'assets/js/[name].js',
+    chunkFilename: 'assets/js/[name].js'
   },
   plugins: [
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
       filename: 'assets/styles.css'
     })
-  ]
+  ],
+  optimization: {
+    splitChunks: {
+      chunks: 'async',
+      minSize: 30000,
+      maxSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      automaticNameDelimiter: '~',
+      name: true,
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true
+        }
+      }
+    }
+  }
 }
 
 module.exports = config
