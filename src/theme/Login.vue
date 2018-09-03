@@ -52,29 +52,30 @@
   </div>
 </template>
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters, mapActions } from "vuex";
 
 export default {
-  data () {
+  data() {
     return {
-      username: '',
-      password: ''
-    }
+      username: "",
+      password: ""
+    };
   },
   computed: {
-    ...mapGetters(['isAuthenticated'])
+    ...mapGetters(["isAuthenticated"])
   },
   methods: {
     ...mapActions({
-      logout: 'logout'
+      logout: "logout"
     }),
-    login () {
-      this.$store.dispatch('login', { username: this.username, password: this.password })
+    login() {
+      this.$store
+        .dispatch("login", { username: this.username, password: this.password })
         .then(() => {
-          this.username = ''
-          this.password = ''
-        })
+          this.username = "";
+          this.password = "";
+        });
     }
   }
-}
+};
 </script>

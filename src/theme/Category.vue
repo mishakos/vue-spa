@@ -9,31 +9,31 @@
   </div>
 </template>
 <script>
-  import Post from './Post.vue'
-  import { mapGetters } from 'vuex'
-  export default {
-    components: {
-      'app-post': Post
-    },
-    computed: {
-      ...mapGetters('postsModule', ['posts'])
-    },
-    methods: {
-      loadPosts () {
-        let categoryId = 2
-        if (this.$route.params.id === 'mobile') {
-          categoryId = 11
-        }
-        this.$store.dispatch('postsModule/udpateCategory', categoryId)
+import Post from "./Post.vue";
+import { mapGetters } from "vuex";
+export default {
+  components: {
+    "app-post": Post
+  },
+  computed: {
+    ...mapGetters("postsModule", ["posts"])
+  },
+  methods: {
+    loadPosts() {
+      let categoryId = 2;
+      if (this.$route.params.id === "mobile") {
+        categoryId = 11;
       }
-    },
-    watch: {
-      '$route' (to, from) {
-        this.loadPosts()
-      }
-    },
-    created () {
-      this.loadPosts()
+      this.$store.dispatch("postsModule/udpateCategory", categoryId);
     }
+  },
+  watch: {
+    $route(to, from) {
+      this.loadPosts();
+    }
+  },
+  created() {
+    this.loadPosts();
   }
+};
 </script>

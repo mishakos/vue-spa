@@ -10,21 +10,20 @@
   </div>
 </template>
 <script>
-import AppHeader from './AppHeader.vue'
-import AppFooter from './AppFooter.vue'
+import AppHeader from "./AppHeader.vue";
+import AppFooter from "./AppFooter.vue";
 export default {
   components: {
-    'app-header': AppHeader,
-    'app-footer': AppFooter
+    "app-header": AppHeader,
+    "app-footer": AppFooter
   }
-}
+};
 </script>
 <style>
-
-  a.card-footer-item {
-    color:  #287ab1;
-  }
-  .columns{
-    flex-wrap: wrap;
-  }
+a.card-footer-item {
+  color: #287ab1;
+}
+.columns {
+  flex-wrap: wrap;
+}
 </style>

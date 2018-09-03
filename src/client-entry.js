@@ -1,4 +1,4 @@
-import { app } from './app'
-import './../node_modules/bulma/css/bulma.css'
+import { app } from "./app";
+import "./../node_modules/bulma/css/bulma.css";
 
-app.$mount('#app')
+app.$mount("#app");

@@ -8,8 +8,6 @@
     ],
     "stage-3"
   ],
-  "ignore": [
-    "node_modules/*"
-  ],
+  "ignore": ["node_modules/*"],
   "plugins": ["syntax-dynamic-import"]
 }

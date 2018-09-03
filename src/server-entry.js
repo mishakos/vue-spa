@@ -1,5 +1,5 @@
-import { app } from './app'
+import { app } from "./app";
 
 export default context => {
-  return app
-}
+  return app;
+};
